@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Convertitore di Vaute</string>
+    <string name="Dollari">Dollari</string>
+    <string name="Euro">Euro</string>
+    <string name="Importo">Importo</string>
+    <string name="Converti">Converti</string>
 </resources>
