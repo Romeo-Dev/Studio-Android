@@ -29,18 +29,22 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void converti(View view) {
-        final double tasso= 0.72;
-        // prendo il valore dell importo
+        final double tassoD= 1.38;
+        final double tassoE=0.72;
+        //TODO: creare un if esterno che valuta il testo della text view tvEuro
 
         if (!isEmpty(Euro)) {
             double imp = Double.parseDouble(Euro.getText().toString());
-            double calcolo = imp / tasso;
-            //setto la view
-            resDollari.setText(String.format("%.2f", calcolo) + "$");
+            if (valutaEur.getText().toString().equals("Euro")) {
+                double calcolo = imp * tassoD;
+                resDollari.setText(String.format("%.2f", calcolo) + "$");
+            }else{
+                double calcolo = imp * tassoE;
+                resDollari.setText(String.format("%.2f", calcolo) + "$");
+            }
         }else{
             Toast.makeText(this, "Importo inserito nullo", Toast.LENGTH_SHORT).show();
         }
-        Euro.setText("");
     }
 
     private boolean isEmpty(EditText euro) {
@@ -50,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void changeValuta(View view) {
 
-        /*TODO: id ripresi dalla vista creare il metodo per cambiare valuta da dollari a euro*/
+        String Euro = valutaEur.getText().toString();
+        String Dol = valutaDoll.getText().toString();
+        valutaDoll.setText(Euro);
+        valutaEur.setText(Dol);
+
     }
 }
