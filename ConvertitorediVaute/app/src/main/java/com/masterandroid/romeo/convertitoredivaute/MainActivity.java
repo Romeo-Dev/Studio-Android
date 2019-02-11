@@ -12,7 +12,8 @@ import com.masterandroid.romeo.convertitoredivaute.R;
 public class MainActivity extends AppCompatActivity {
 
     EditText Euro;
-    TextView resDollari;
+    TextView resDollari,valutaEur,valutaDoll;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
         Euro = (EditText) findViewById(R.id.importo);
         resDollari = (TextView) findViewById(R.id.resDollari);
+        valutaEur = (TextView) findViewById(R.id.tvEuro);
+        valutaDoll = (TextView) findViewById(R.id.tvDollari);
 
     }
 
@@ -43,5 +46,10 @@ public class MainActivity extends AppCompatActivity {
     private boolean isEmpty(EditText euro) {
         String debug = Euro.getText().toString().trim();
         return debug.length() == 0;
+    }
+
+    public void changeValuta(View view) {
+
+        /*TODO: id ripresi dalla vista creare il metodo per cambiare valuta da dollari a euro*/
     }
 }
